@@ -1,0 +1,52 @@
+<!-- 
+	Author: Jireh Nimes
+	03-03. Javascript 
+-->
+<!DOCTYPE html PUBLIC "- // W3C // DTD XHTML 1.0 Transitional // EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd ">
+<html>
+<head>
+	<title>03-03 Javascript | Jireh Nimes</title>
+
+	<!-- External JS -->
+	<script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+
+	<!-- Bootstrap CSS & JS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- External CSS -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row"></div>
+		<div class="row">
+			<div class="col-xs-4"></div>
+			<div class="col-xs-4 mForm">
+				<div class="form-group">
+				  	<label for="fId">ID:</label>
+				  	<input type="text" class="form-control" id="fId">
+				</div>
+				<div class="alert alert-warning mIdMsg">
+				  	<p>Be at least 6 characters</p>
+					<p>ID must only consist of lower case character</p>
+				</div>
+				<div class="form-group">
+				  	<label for="fPwd">Password:</label>
+				  	<input type="password" class="form-control" id="fPwd">
+				</div>
+				<div class="alert alert-warning mPwdMsg">
+				  	<p>Be at least 8 characters</p>
+					<p>Have at least one lower case character</p>
+					<p>Have at least one capital letter</p>
+					<p>Have at least one number</p>
+					<p>Have at least one special character(※ but, following four special letters : ? $ & are not allowed to use)</p>
+				</div>
+				<div class="alert mErrCnt"></div>
+			</div>
+			<div class="col-xs-4"></div>
+		</div>
+	</div>
+</body>
+</html>

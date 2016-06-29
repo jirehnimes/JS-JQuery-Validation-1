@@ -1,0 +1,21 @@
+/*
+	Author: Jireh Nimes
+	03-03. Javascript
+*/
+.container-fluid > .row:nth-child(1){
+	height: 50px;
+}
+
+.mForm{
+	color: white;
+	background-color: rgb(52,52,52);
+	padding-top: 20px;
+}
+
+.mIdMsg{
+	display: none;
+}
+
+.mPwdMsg{
+	display: none;
+}
