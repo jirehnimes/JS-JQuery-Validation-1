@@ -2,24 +2,6 @@
 // 03-03. Javascript
 $(document).ready(function(){
 
-    // Displays validation results for ID
-    $('#fId').click(function(){
-        if(oId.iErr === 0){
-            $('.mIdMsg').hide();
-        }else{
-            $('.mIdMsg').slideDown('slow');
-        }
-    });
-
-    // Displays validation results for Password
-    $('#fPwd').click(function(){
-        if(oPwd.iErr === 0){
-            $('.mPwdMsg').hide();
-        }else{
-            $('.mPwdMsg').slideDown('slow');
-        }
-    });
-
     // array
     // Collection of regex to meet per requirement
     var aId = [
@@ -80,6 +62,24 @@ $(document).ready(function(){
         iErr: 5,
         count: 0
     }
+
+    // Displays validation results for ID
+    $('#fId').click(function(){
+        if(oId.iErr === 0){
+            $('.mIdMsg').hide();
+        }else{
+            $('.mIdMsg').slideDown('slow');
+        }
+    });
+
+    // Displays validation results for Password
+    $('#fPwd').click(function(){
+        if(oPwd.iErr === 0){
+            $('.mPwdMsg').hide();
+        }else{
+            $('.mPwdMsg').slideDown('slow');
+        }
+    });
 
     // Listens to input for ID
     $('#fId').keyup(function(e) {
