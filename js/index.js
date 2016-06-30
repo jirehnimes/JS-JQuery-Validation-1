@@ -4,12 +4,20 @@ $(document).ready(function(){
 
     // Displays validation results for ID
     $('#fId').click(function(){
-        $('.mIdMsg').slideDown('slow');
+        if(oId.iErr === 0){
+            $('.mIdMsg').hide();
+        }else{
+            $('.mIdMsg').slideDown('slow');
+        }
     });
 
     // Displays validation results for Password
     $('#fPwd').click(function(){
-        $('.mPwdMsg').slideDown('slow');
+        if(oPwd.iErr === 0){
+            $('.mPwdMsg').hide();
+        }else{
+            $('.mPwdMsg').slideDown('slow');
+        }
     });
 
     // array
@@ -82,6 +90,9 @@ $(document).ready(function(){
                 sId.match(aId[i]['mRegex']) ? decErr(oId, 'mIdMsg', aId[i]['sProp'], i + 1, oId.count) : incErr(oId, 'mIdMsg', aId[i]['sProp'], i + 1, oId.count);
             }
         }
+        if(oId.iErr === 0){
+            $('.mIdMsg').slideUp('slow');
+        }
         disErr();
     });
 
@@ -98,6 +109,9 @@ $(document).ready(function(){
                 }
             }
         }
+        if(oPwd.iErr === 0){
+            $('.mPwdMsg').slideUp('slow');
+        }
         disErr();
     });
 
@@ -112,7 +126,7 @@ $(document).ready(function(){
         $('.' + sElem + ' > p:nth-child(' + iNum + ')').hide();
         if(that[sObjProp] === 0){
             that[sObjProp] = 1;
-            if(that.iErr > 0 && iCount === 0){
+            if(that.iErr > 0 && that.count === 0){
                 that.iErr -= 1;
                 that.count = 1;
             }
@@ -130,7 +144,7 @@ $(document).ready(function(){
         $('.' + sElem + ' > p:nth-child(' + iNum + ')').show();
         if(that[sObjProp] === 1){
             that[sObjProp] = 0;
-            if(that.iErr < that.iDefErr && iCount === 0){
+            if(that.iErr < that.iDefErr && that.count === 0){
                 that.iErr += 1;
                 that.count = 1;
             }
