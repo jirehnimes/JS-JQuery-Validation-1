@@ -50,7 +50,7 @@ $(document).ready(function(){
         iLow: 0,
         iDefErr: 2,
         iErr: 2,
-        count: 0
+        iCtr: 0
     };
     var oPwd = {
         iLen: 0,
@@ -60,7 +60,7 @@ $(document).ready(function(){
         iSpc: 0,
         iDefErr: 5,
         iErr: 5,
-        count: 0
+        iCtr: 0
     }
 
     // Displays validation results for ID
@@ -84,10 +84,10 @@ $(document).ready(function(){
     // Listens to input for ID
     $('#fId').keyup(function(e) {
         sId = $(this).val();
-        oId.count = 0;
+        oId.iCtr = 0;
         if(e.key.length === 1 || e.key === 'Delete' || e.key === 'Backspace'){
             for(i = 0; i < aId.length; i++){
-                sId.match(aId[i]['mRegex']) ? decErr(oId, 'mIdMsg', aId[i]['sProp'], i + 1, oId.count) : incErr(oId, 'mIdMsg', aId[i]['sProp'], i + 1, oId.count);
+                sId.match(aId[i]['mRegex']) ? decErr(oId, 'mIdMsg', aId[i]['sProp'], i + 1, oId.iCtr) : incErr(oId, 'mIdMsg', aId[i]['sProp'], i + 1, oId.iCtr);
             }
         }
         if(oId.iErr === 0){
@@ -99,13 +99,13 @@ $(document).ready(function(){
     // Listens to input for Password
     $('#fPwd').keyup(function(e) {
         sPwd = $(this).val();
-        oPwd.count = 0;
+        oPwd.iCtr = 0;
         if(e.key.length === 1 || e.key === 'Delete' || e.key === 'Backspace'){
             for(i = 0; i < aPwd.length; i++){
                 if(i === 4){
-                    sPwd.match(aPwd[i]['mRegex']) && sPwd.match(aPwd[i]['mRegex2']) ? decErr(oPwd, 'mPwdMsg', aPwd[i]['sProp'], i + 1, oPwd.count) : incErr(oPwd, 'mPwdMsg', aPwd[i]['sProp'], i + 1, oPwd.count);
+                    sPwd.match(aPwd[i]['mRegex']) && sPwd.match(aPwd[i]['mRegex2']) ? decErr(oPwd, 'mPwdMsg', aPwd[i]['sProp'], i + 1, oPwd.iCtr) : incErr(oPwd, 'mPwdMsg', aPwd[i]['sProp'], i + 1, oPwd.iCtr);
                 }else{
-                    sPwd.match(aPwd[i]['mRegex']) ? decErr(oPwd, 'mPwdMsg', aPwd[i]['sProp'], i + 1, oPwd.count) : incErr(oPwd, 'mPwdMsg', aPwd[i]['sProp'], i + 1, oPwd.count);
+                    sPwd.match(aPwd[i]['mRegex']) ? decErr(oPwd, 'mPwdMsg', aPwd[i]['sProp'], i + 1, oPwd.iCtr) : incErr(oPwd, 'mPwdMsg', aPwd[i]['sProp'], i + 1, oPwd.iCtr);
                 }
             }
         }
@@ -128,7 +128,7 @@ $(document).ready(function(){
             that[sObjProp] = 1;
             if(that.iErr > 0 && iCount === 0){
                 that.iErr -= 1;
-                that.count = 1;
+                that.iCtr = 1;
             }
         }
     }
@@ -146,7 +146,7 @@ $(document).ready(function(){
             that[sObjProp] = 0;
             if(that.iErr < that.iDefErr && iCount === 0){
                 that.iErr += 1;
-                that.count = 1;
+                that.iCtr = 1;
             }
         }
     }
