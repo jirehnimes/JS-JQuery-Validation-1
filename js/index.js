@@ -126,7 +126,7 @@ $(document).ready(function(){
         $('.' + sElem + ' > p:nth-child(' + iNum + ')').hide();
         if(that[sObjProp] === 0){
             that[sObjProp] = 1;
-            if(that.iErr > 0 && that.count === 0){
+            if(that.iErr > 0 && iCount === 0){
                 that.iErr -= 1;
                 that.count = 1;
             }
@@ -144,7 +144,7 @@ $(document).ready(function(){
         $('.' + sElem + ' > p:nth-child(' + iNum + ')').show();
         if(that[sObjProp] === 1){
             that[sObjProp] = 0;
-            if(that.iErr < that.iDefErr && that.count === 0){
+            if(that.iErr < that.iDefErr && iCount === 0){
                 that.iErr += 1;
                 that.count = 1;
             }
